@@ -118,3 +118,123 @@ body {
   background-image: var(--musnotes-sig-dark);
   color: var(--accent-color);
 }
+/* 🌿 musnotes - Full Theme 🌿 */
+
+/* Tarik font Alice dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
+/* Terapkan font Alice sebagai default untuk tema ini */
+.theme-light, .theme-dark {
+    --font-text-theme: 'Alice', serif;
+    --font-text: var(--font-text-theme);
+    --font-interface: var(--font-text-theme); /* Biar UI-nya juga pakai Alice (opsional) */
+}
+
+/* =========================================
+   LIGHT MODE SETTINGS
+   ========================================= */
+.theme-light {
+    --background-primary: #fcfbf9; 
+    --background-secondary: #f2efe9; 
+    --text-normal: #3c3c3c;
+    --text-muted: #737373;
+    
+    --accent-color: #6a525c;
+    --link-color: var(--accent-color);
+    --interactive-accent: var(--accent-color);
+    
+    --h1-color: var(--accent-color);
+    --h2-color: var(--accent-color);
+    --h3-color: var(--accent-color);
+    --background-modifier-border: #e8e3da;
+}
+
+/* =========================================
+   DARK MODE SETTINGS
+   ========================================= */
+.theme-dark {
+    --background-primary: #1a1a1a;
+    --background-secondary: #222222; 
+    --text-normal: #d0d0d0;
+    --text-muted: #888888;
+    
+    --accent-color: #d1a7b4;
+    --link-color: var(--accent-color);
+    --interactive-accent: var(--accent-color);
+    
+    --h1-color: var(--accent-color);
+    --h2-color: var(--accent-color);
+    --h3-color: var(--accent-color);
+    --background-modifier-border: #333333;
+}
+
+/* =========================================
+   TYPOGRAPHY & GLOBAL TWEAKS
+   ========================================= */
+body {
+    --line-height-normal: 1.7;
+}
+
+.markdown-preview-view blockquote {
+    border-left: 4px solid var(--accent-color);
+    background-color: var(--background-secondary);
+    border-radius: 4px;
+    padding: 10px 15px;
+}
+
+.graph-view.color-node { color: var(--accent-color); }
+.graph-view.color-line { color: var(--text-muted); }
+
+/* =========================================
+   🌿 MUSNOTES SIGNATURE & COPYRIGHT (ULTIMATE FIX) 🌿
+   ========================================= */
+
+/* Mengembalikan perilaku scroller Obsidian ke normal */
+.markdown-source-view.mod-cm6 .cm-scroller {
+    display: block !important;
+}
+
+/* 1. Memaksa wadah teks minimal setinggi layar */
+/* 2. Menyiapkan ruang kosong (padding) 150px di bawah agar teks BERHENTI sebelum footer */
+.cm-content, 
+.markdown-preview-view .markdown-preview-sizer {
+    position: relative !important;
+    min-height: calc(100vh - 120px) !important; 
+    padding-bottom: 150px !important; 
+}
+
+/* Memposisikan Footer tepat di area ruang kosong paling bawah tadi */
+.cm-content::after,
+.markdown-preview-view .markdown-preview-sizer::after {
+  content: "© 2026 MuS·"; 
+  position: absolute;
+  bottom: 40px; /* Jarak pas dari ujung paling dasar */
+  left: 0;
+  right: 0; /* left & right 0 bikin teksnya otomatis centering */
+  
+  display: block;
+  text-align: center;
+  font-family: var(--font-text-theme);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+  
+  padding-top: 44px; /* Ruang untuk Ikon Orbital-nya */
+  background-size: 34px 34px;
+  background-repeat: no-repeat;
+  background-position: top center; 
+}
+
+/* Pewarnaan Footer Light Mode */
+.theme-light .cm-content::after,
+.theme-light .markdown-preview-view .markdown-preview-sizer::after {
+  background-image: var(--musnotes-sig-light);
+  color: var(--accent-color);
+}
+
+/* Pewarnaan Footer Dark Mode */
+.theme-dark .cm-content::after,
+.theme-dark .markdown-preview-view .markdown-preview-sizer::after {
+  background-image: var(--musnotes-sig-dark);
+  color: var(--accent-color);
+}
