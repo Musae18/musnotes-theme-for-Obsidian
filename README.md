@@ -30,4 +30,4 @@ Since this theme is brand new, you can install it manually in a few easy steps:
 *(Add screenshots of your Light Mode and Dark Mode here! Show off a note with headers, blockquotes, and the footer!)*
 
 ---
-*Created by [MuS](https://musnotes.my.id) — Keep wandering, keep wondering.*
+*Created by [MuS](https://musnotes.my.id).*
